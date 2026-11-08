@@ -40,7 +40,10 @@
             </picture>
             <span class="brand-name">POCKET<br><b>MYTH</b></span>
         </a>
+        <button class="nav-toggle" type="button" aria-label="菜单" aria-expanded="false">☰</button>
         <nav class="main-nav" aria-label="新聞">
+        <div class="nav-langs"><a href="https://www.pocketmyth.org/">EN</a><a href="https://zh.pocketmyth.org/">简体</a><span aria-current="page">繁體</span><a href="https://ko.pocketmyth.org/">한국어</a><a href="https://vi.pocketmyth.org/">Tiếng Việt</a></div>
+    
             <a href="https://zhtw.pocketmyth.org/news">新聞</a>
             <a href="https://zhtw.pocketmyth.org">展示</a>
             <a href="https://zhtw.pocketmyth.org">初始精靈</a>
@@ -134,6 +137,20 @@
     <div class="dl-sticky">
         <a href="../#download">下載戰鬥吧精靈</a>
     </div>
+
+    <script>
+        (function () {
+            var header = document.querySelector('.site-header');
+            var nav = document.querySelector('.main-nav');
+            var btn = document.querySelector('.nav-toggle');
+            if (!header || !nav || !btn) { return; }
+            btn.addEventListener('click', function () {
+                var open = nav.classList.toggle('open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                btn.textContent = open ? '\u2715' : '\u2630';
+            });
+        }());
+    </script>
 </body>
 
 </html>
