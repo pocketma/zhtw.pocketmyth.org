@@ -1,0 +1,317 @@
+/* ============================================================
+   News pages (/en/news/) — shares tokens with en.css
+   ============================================================ */
+
+body.news-page {
+    padding-top: var(--header-h);
+    background:
+        radial-gradient(900px 420px at 12% 0%, rgba(47, 134, 255, .18), transparent 70%),
+        radial-gradient(700px 360px at 88% 8%, rgba(255, 210, 87, .1), transparent 70%),
+        var(--navy);
+}
+
+.news-page .site-header {
+    background: rgba(4, 9, 22, .96);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, .35);
+}
+
+/* ---------------- breadcrumb ---------------- */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    padding: 22px 0 0;
+    font-size: 12.5px;
+    color: #8b9dc0;
+}
+
+.breadcrumb a {
+    color: #b9c8e6;
+}
+
+.breadcrumb a:hover {
+    color: var(--gold);
+}
+
+.breadcrumb span[aria-current] {
+    color: #dfe8ff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60vw;
+}
+
+/* ---------------- article ---------------- */
+.article-shell {
+    max-width: 860px;
+    margin: 20px auto 0;
+    padding: clamp(24px, 4vw, 44px);
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+    color: #22314f;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    color: #6b7b9c;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #0f4fc4;
+    background: #e6f0ff;
+}
+
+.chip.is-update {
+    color: #8a5b00;
+    background: #fff1d6;
+}
+
+.chip.is-guide {
+    color: #0b6b4f;
+    background: #dcf5ec;
+}
+
+.chip.is-notice {
+    color: #6b2fb0;
+    background: #efe3ff;
+}
+
+.article-shell h1 {
+    margin-top: 14px;
+    font-size: clamp(26px, 3.6vw, 38px);
+    font-weight: 900;
+    line-height: 1.2;
+    color: #101f3d;
+}
+
+.article-lead {
+    margin: 14px 0 6px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #4a5c80;
+}
+
+.prose {
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2b3a5c;
+}
+
+.prose p {
+    margin: 0 0 16px;
+}
+
+.prose h3 {
+    margin: 28px 0 10px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #101f3d;
+}
+
+.prose ul {
+    margin: 0 0 18px;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+.prose li {
+    margin-bottom: 8px;
+}
+
+.prose strong {
+    color: #101f3d;
+}
+
+.article-note {
+    margin-top: 24px;
+    padding: 14px 16px;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    background: #f6f9ff;
+    font-size: 13.5px;
+    color: #5b6b8f;
+}
+
+.article-foot {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid #e3ebf8;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+}
+
+.article-foot .btn-dl-mini {
+    display: inline-flex;
+    align-items: center;
+    height: 42px;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(180deg, #5cb0ff 0%, #1465d8 100%);
+    box-shadow: 0 8px 18px rgba(20, 101, 216, .35);
+}
+
+.article-foot a.text-link {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f4fc4;
+}
+
+/* ---------------- archive ---------------- */
+.news-hero {
+    padding: clamp(34px, 6vw, 60px) 0 clamp(18px, 3vw, 26px);
+}
+
+.news-hero h1 {
+    font-size: clamp(30px, 4.4vw, 46px);
+    font-weight: 900;
+    color: #fff;
+}
+
+.news-hero p {
+    max-width: 640px;
+    margin-top: 12px;
+    color: #a9bbdc;
+    font-size: 15.5px;
+}
+
+.news-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 8px;
+}
+
+.news-filter {
+    font: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #cfdcf7;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 999px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.news-filter.is-active,
+.news-filter:hover {
+    color: #10203f;
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.news-list {
+    display: grid;
+    gap: 12px;
+    padding: 14px 0 clamp(48px, 7vw, 80px);
+}
+
+.news-item {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+    padding: 20px 22px;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 14px;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 210, 87, .45);
+    background: rgba(255, 255, 255, .08);
+}
+
+.news-item time {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #8fa3c8;
+    letter-spacing: .02em;
+}
+
+.news-item h2 {
+    margin-top: 6px;
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.news-item p {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: #a9bbdc;
+}
+
+.news-empty {
+    padding: 40px 0;
+    color: #8fa3c8;
+    font-size: 14px;
+}
+
+@media (max-width: 760px) {
+    .article-shell {
+        margin-top: 14px;
+        border-radius: 16px;
+        padding: 22px 18px;
+    }
+
+    .article-lead {
+        font-size: 15.5px;
+    }
+
+    .prose {
+        font-size: 15px;
+    }
+
+    .news-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 16px 18px;
+    }
+
+    .news-item time {
+        order: -1;
+    }
+
+    .news-item h2 {
+        font-size: 16px;
+    }
+}
+
+.news-browse {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #8fa3c8;
+}
+
+.news-browse a {
+    color: var(--gold);
+    font-weight: 700;
+}

@@ -1,0 +1,1761 @@
+:root {
+    --primary-color: #fee434;
+    --nav-height: 1.3rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* 标准语法 */
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.seo-heading {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* 禁止滚动的样式 */
+#zdjl_Pc .no-scroll {
+    overflow: hidden;
+}
+
+#mainBodyPc {
+    height: 100%;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* 超过文本省略 */
+.overFlowEllipsis {
+    overflow: hidden;
+    /*超出部分隐藏*/
+    text-overflow: ellipsis;
+    /* 超出部分显示省略号 */
+    white-space: nowrap;
+    /*规定段落中的文本不进行换行 */
+}
+
+/* 自动换行 */
+.overFlow {
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/* 部分功能选中复制 */
+.selectable-text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* 菜单 */
+#zdjl_Pc nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 0.33rem;
+    display: flex;
+    align-items: center;
+    gap: 3%;
+    /* justify-content: center; */
+    color: #fff;
+    transition: background-color 0.5s ease;
+}
+
+#zdjl_Pc nav.nav-solid {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#zdjl_Pc nav::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 0.04rem;
+    background: linear-gradient(90deg, #1296FF, #FFD257, #71FFEB, #FFD257, #1296FF);
+}
+
+#zdjl_Pc nav>img {
+    width: 2.32rem;
+    height: auto;
+    object-fit: contain;
+    margin-left: 3%;
+}
+
+#zdjl_Pc .nav-list {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#zdjl_Pc .nav-list .nav-left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+#zdjl_Pc .nav-list .nav-left li {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 1.1;
+    padding: 0 0.45rem;
+    position: relative;
+}
+
+#zdjl_Pc .nav-list .nav-left li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 0.28rem;
+    background: #FFFFFF;
+}
+
+#zdjl_Pc .nav-list .nav-left li .nav-zh {
+    font-size: inherit;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+#zdjl_Pc .nav-list .nav-left li .nav-en {
+    font-size: 0.15rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-top: 0.04rem;
+    transition: all 0.3s ease;
+    font-weight: normal;
+}
+
+#zdjl_Pc .nav-list .activation {
+    color: #FEE434;
+}
+
+#zdjl_Pc .nav-list .nav-left .activation .nav-zh {
+    font-size: 0.38rem;
+}
+
+#zdjl_Pc .nav-list .nav-left .activation .nav-en {
+    color: #FEE434;
+}
+
+#zdjl_Pc .nav-list .download {
+    display: flex;
+    align-items: center;
+    margin-right: max(4%, 0.35rem);
+    height: 100%;
+}
+
+#zdjl_Pc .nav-social-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 0.2rem;
+}
+
+#zdjl_Pc .nav-social-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 0.28rem;
+    background: #FFFFFF;
+}
+
+#zdjl_Pc .nav-social-item>img {
+    width: 0.54rem;
+    height: 0.54rem;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social-qrcode-popup {
+    position: absolute;
+    top: calc(100% + 0.12rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 1.92rem;
+    height: 2.12rem;
+    background: url(../img/new/bg_qrcode_model_arrow.png) no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.18rem;
+    box-sizing: border-box;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.social-qrcode-popup::before {
+    content: '';
+    position: absolute;
+    top: -0.15rem;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+}
+
+.social-qrcode-popup img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.08rem;
+    margin-top: 0.2rem;
+}
+
+#zdjl_Pc .nav-social-item:hover .social-qrcode-popup {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+#zdjl_Pc .content-box {
+    height: 100%;
+}
+
+#zdjl_Pc .content-box .first,
+#zdjl_Pc .news,
+#zdjl_Pc .introduction,
+#zdjl_Pc .gameFeature,
+#zdjl_Pc .community {
+    height: 100%;
+}
+
+#zdjl_Pc .content-box .first {
+    background: url(../img/pomy/opt/hero-1920.webp) no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+/* 首页 */
+#zdjl_Pc .content-box .first .first-content {
+    width: 8.8rem;
+    height: 2.15rem;
+    position: absolute;
+    background: url(../img/pomy/opt/bg-download.webp) no-repeat center center;
+    background-size: 100% 100%;
+    margin-left: -4.4rem;
+    left: 50%;
+    bottom: 0.37rem;
+    padding: 0.18rem 0.66rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#zdjl_Pc .content-box .first .age_indication {
+    width: 1.25rem;
+    height: auto;
+    position: absolute;
+    left: 0.8rem;
+    bottom: 0.65rem;
+    cursor: pointer;
+}
+
+/* 首页下载区域 - 左侧扫码与右侧福利中心卡片（尺寸：213px * 179px） */
+#zdjl_Pc .content-box .first .first-content .leftQR,
+#zdjl_Pc .content-box .first .first-content .right-box {
+    width: 2.13rem;
+    height: 1.79rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#zdjl_Pc .content-box .first .first-content .leftQR .leftQR-bg,
+#zdjl_Pc .content-box .first .first-content .right-box>img {
+    width: 2.13rem;
+    height: 1.79rem;
+    display: block;
+    object-fit: fill;
+}
+
+/* 左侧扫码卡片内部二维码图片样式与精准定位 */
+#zdjl_Pc .content-box .first .first-content .leftQR .leftQR-code {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0.16rem;
+    border: 2px solid #113DB9;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    background-color: #ffffff;
+    padding: 0.04rem;
+    box-sizing: border-box;
+    border-radius: 0.06rem;
+}
+
+#zdjl_Pc .content-box .first .first-content .download-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#zdjl_Pc .content-box .first .first-content .download-box img {
+    width: 3.11rem;
+    height: auto;
+}
+
+/* 国际站下载按钮 */
+#zdjl_Pc .content-box .first .first-content .download-box .intl-download {
+    width: 3.11rem;
+    height: 0.86rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.43rem;
+    background: linear-gradient(180deg, #5cb0ff 0%, #1465d8 100%);
+    color: #fff;
+    font-size: 0.36rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-shadow: 0 0.02rem 0 rgba(0, 0, 0, .25);
+    box-shadow: 0 0.04rem 0.14rem rgba(0, 0, 0, .3), inset 0 0.02rem 0 rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+
+#zdjl_Pc .gift-package {
+    height: 21%;
+    background: #000;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 0.24rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#zdjl_Pc .content-box .news,
+#zdjl_Pc .introduction,
+#zdjl_Pc .gameFeature,
+#zdjl_Pc .community {
+    padding: 0 4%;
+    padding-top: calc(0.2rem + var(--nav-height));
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 游戏资讯 */
+#zdjl_Pc .content-box .news {
+    background: url(../img/pomy/opt/bg-blue-pc.webp);
+    background-size: 100% 100%;
+}
+
+#zdjl_Pc .content-box .news .content {
+    /* flex: 1; */
+    display: flex;
+    width: 100%;
+    height: 62%;
+    align-items: center;
+}
+
+#zdjl_Pc .content-box .news .content .left-box,
+#zdjl_Pc .content-box .news .content .right-box {
+    width: 50%;
+}
+
+#zdjl_Pc .content-box .news .content .left-box {
+    width: 8rem;
+    height: 4.4rem;
+    margin-right: 3%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#zdjl_Pc .news-swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#zdjl_Pc .news-swiper-container .swiper-wrapper {
+    height: 100%;
+    height: 100%;
+}
+
+#zdjl_Pc .news-swiper-container .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+#zdjl_Pc .news-swiper-container .swiper-slide {
+    position: relative;
+}
+
+#zdjl_Pc .content-box .news .content .left-box::after {
+    content: '';
+    position: absolute;
+    /* 在这里可以随意调整 left, top, width, height 使背景图超出框 */
+    left: -2%;
+    top: -9%;
+    width: 8.3rem;
+    height: 5rem;
+    /* 高度根据您的轮播图高度 (85%) 适当放大 */
+    z-index: 99;
+    background: url(../img/new/border_news.png) no-repeat center center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    /* 关键：确保边框不会遮挡鼠标滑动轮播图的操作 */
+}
+
+/* #zdjl_Pc .news-view-boxs-bg {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 85%;
+    background: url(../img/new/border_news.png);
+    background-size: 100% 100%;
+} */
+
+#zdjl_Pc .swiper-button-prev2,
+#zdjl_Pc .swiper-button-next2 {
+    width: 0.7rem;
+    top: 40%;
+    z-index: 100;
+}
+
+#zdjl_Pc .swiper-button-prev2 {
+    left: -5%;
+}
+
+#zdjl_Pc .swiper-button-next2 {
+    right: -5%;
+}
+
+#zdjl_Pc .swiper-title {
+    background-color: var(--primary-color);
+    margin-top: 2%;
+    font-size: 0.4rem;
+    font-weight: 800;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0 5%;
+}
+
+#zdjl_Pc .content-box .news .content .right-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    height: 100%;
+}
+
+#zdjl_Pc .news-nav {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    background: white;
+    border-radius: 0.5rem;
+    border: 2px solid #FEE434;
+    padding: 0.09rem 0.1rem;
+    margin: 0 1%;
+}
+
+#zdjl_Pc .news-nav>div {
+    width: 1.8rem;
+    height: 0.67rem;
+    line-height: 0.67rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: 1000;
+    font-size: 0.3rem;
+    cursor: pointer;
+    color: #4D4D4D;
+    margin-right: 0.12rem;
+}
+
+#zdjl_Pc .news-nav>div:last-child {
+    margin-right: 0;
+}
+
+#zdjl_Pc .news-nav>div.newsNavBlock {
+    background: url(../img/new/bg_action_news_title.png);
+    background-size: 100% 100%;
+    color: #612C01;
+}
+
+#zdjl_Pc .news-nav>p {
+    height: 60%;
+    width: 2px;
+    border-radius: 1px;
+    background-color: #000;
+}
+
+#zdjl_Pc .news-list {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.3%;
+    padding: 0 1%;
+}
+
+/* 自定义滚动条 */
+#zdjl_Pc .news-list::-webkit-scrollbar {
+    width: 0.1rem;
+    /* 设置滚动条宽度 */
+    background-color: #fff;
+}
+
+#zdjl_Pc .news-list::-webkit-scrollbar-thumb {
+    background: #F4E538;
+    /* 滚动条滑块的颜色 */
+    border-radius: 0.1rem;
+}
+
+#zdjl_Pc .news-list::-webkit-scrollbar-track {
+    border-radius: 0.1rem;
+}
+
+#zdjl_Pc .news-item {
+    width: 100%;
+    height: 0.8rem;
+    border: 2px solid #F4E538;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    background: #fff;
+    padding: 0.13rem 0.15rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+#zdjl_Pc .news-item:hover {}
+
+#zdjl_Pc .news-item-status {
+    width: 1.06rem;
+    height: 100%;
+    background: url(../img/new/bg_news_tag.png);
+    background-size: 100% 100%;
+    font-size: 0.21rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 0.2rem;
+}
+
+#zdjl_Pc .news-item-status span {
+    position: absolute;
+    left: 24%;
+}
+
+#zdjl_Pc .news-item-content {
+    flex: 1;
+    font-size: 0.23rem;
+    color: #000;
+    display: -webkit-box;
+    /* 将对象作为弹性伸缩盒子模型显示 */
+    -webkit-box-orient: vertical;
+    /* 设置或检索伸缩盒对象的子元素的排列方式为垂直方向 */
+    -webkit-line-clamp: 1;
+    /* 显示的行数 */
+    overflow: hidden;
+    /* 隐藏超出部分 */
+    text-overflow: ellipsis;
+    /* 超出内容用省略号表示 */
+}
+
+#zdjl_Pc .news-item-date {
+    font-size: 0.16rem;
+    margin-right: 2%;
+    color: #000;
+}
+
+/* 初始精灵 */
+#zdjl_Pc .content-box .introduction {
+    background: url(../img/pomy/opt/bg-yellow-pc.webp);
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.partner-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%
+}
+
+.partner-content .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.partner-content .center .partner-img {
+    width: 100%;
+    background: url("../img/new/bg_pokemon.png") no-repeat bottom center;
+    background-size: 100% 1.68rem;
+    min-height: 1.68rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+}
+
+.partner-content .center .partner-img img {
+    width: 72%;
+    height: auto;
+    margin-bottom: 0.6rem;
+}
+
+.partner-content .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partner-content .center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.partner-content .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.partner-content .left .left-title {
+    width: 4.74rem;
+    height: 0.84rem;
+    background: url(../img/new/bg_inital_name.png) no-repeat;
+    background-size: 100% 100%;
+    font-weight: 800;
+    font-size: 0.42rem;
+    color: #FFFFFF;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.8rem;
+}
+
+.partner-content .left .left-info {
+    width: 5.33rem;
+    height: 3.07rem;
+    box-sizing: border-box;
+    padding: 0.3rem 0.31rem;
+    background: url(../img/new/bg_info.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0.16rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.partner-content .left .left-info .figure {
+    margin: 0.1rem 0;
+}
+
+.partner-content .left .left-info .text {
+    font-size: 0.24rem;
+    color: white;
+}
+
+.partner-content .left .left-info .peculiarity {
+    display: flex;
+    align-items: center;
+}
+
+.partner-content .left .left-info .peculiarity img {
+    height: 0.48rem;
+    width: auto;
+    margin-right: 0.2rem;
+}
+
+.partner-content .left .left-indicator {
+    position: relative;
+    width: 5.33rem;
+    height: 1.79rem;
+    background: url(../img/new/bg_inital_head_portrait.png) no-repeat;
+    background-size: 100% 100%;
+    align-items: center;
+    display: flex;
+    padding: 0 0.46rem;
+    box-sizing: border-box;
+}
+
+.partner-content .left .left-indicator .arrows {
+    width: 0.67rem;
+    height: 0.72rem;
+    position: absolute;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.partner-content .left .left-indicator .arrows:hover {
+    transform: scale(1.1);
+}
+
+.partner-content .left .left-indicator .left {
+    left: -0.37rem;
+}
+
+.partner-content .left .left-indicator .right {
+    right: -0.37rem;
+}
+
+.partner-content .left .left-indicator .portrait-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.04rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.partner-content .left .left-indicator .portrait-box .portrait-list {
+    display: flex;
+    gap: 0.13rem;
+    transition: transform 0.3s ease;
+}
+
+.partner-content .left .left-indicator .portrait-box .portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* 将遮罩放在 .portrait 上，定位在图片区域 */
+.partner-content .left .left-indicator .portrait-box .portrait::after {
+    content: '';
+    position: absolute;
+    top: 0.05rem;
+    /* 1rem(图片) - 0.9rem(遮罩) 的一半，使其垂直居中 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平居中 */
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    /* 圆形 */
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.partner-content .left .left-indicator .portrait-box .portrait:hover::after {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* 选中状态下隐藏遮罩 */
+.partner-content .left .left-indicator .portrait-box .portrait.pitch-on::after {
+    opacity: 0;
+}
+
+.partner-content .left .left-indicator .portrait-box .portrait img {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.03rem;
+    position: relative;
+}
+
+.partner-content .left .left-indicator .portrait-box span {
+    font-size: 0.24rem;
+    color: white;
+}
+
+.partner-content .right .title-img {
+    width: 3.09rem;
+    height: 0.85rem;
+    margin-top: -0.36rem;
+}
+
+.partner-content .right .right-numerical {
+    width: 5.62rem;
+    height: 3.34rem;
+    background: url(../img/new/bg_ability.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    margin: 0.16rem 0;
+    justify-content: center;
+}
+
+.partner-content .right .right-numerical img {
+    width: 5.24rem;
+    height: 2.97rem;
+    object-fit: fill;
+    border-radius: 0.1rem;
+    border: 0.03rem solid white;
+}
+
+.partner-content .right .right-evolve {
+    width: 5.62rem;
+    height: 2.08rem;
+    background: url(../img/new/bg_evolution_short.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-content .right .right-evolve.long {
+    height: 3.56rem;
+    background: url(../img/new/bg_evolution_long.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.partner-content .right .right-evolve img {
+    width: 5.19rem;
+    height: 1.63rem;
+    object-fit: fill;
+    border-radius: 0.1rem;
+    border: 0.03rem solid white;
+}
+
+.partner-content .right .right-evolve.long img {
+    height: 3.16rem;
+}
+
+/* 游戏亮点 */
+#zdjl_Pc .content-box .gameFeature {
+    background: url(../img/pomy/opt/bg-red-pc.webp);
+    background-size: 100% 100%;
+}
+
+#zdjl_Pc .gameFeature-content {
+    width: 65%;
+    height: 60%;
+    position: relative;
+}
+
+#zdjl_Pc .gameFeature-swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 0.3rem;
+}
+
+#zdjl_Pc .gameFeature-swiper-containe .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 10s ease-in-out;
+}
+
+#zdjl_Pc .gameFeature-swiper-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#zdjl_Pc .gameFeature-swiper-container .swiper-slide-prev,
+.swiper-slide-next {
+    opacity: .7;
+}
+
+#zdjl_Pc .swiper-button-prev4,
+#zdjl_Pc .swiper-button-next4 {
+    width: 8%;
+    top: 35%;
+    z-index: 99;
+}
+
+#zdjl_Pc .swiper-button-prev4 {
+    left: -12%;
+}
+
+#zdjl_Pc .swiper-button-next4 {
+    right: -12%;
+}
+
+#zdjl_Pc .swiper-slide4-border {
+    border: 5px solid #F4E538;
+}
+
+/* 游戏亮点分页指示器 */
+#zdjl_Pc .gameFeature-pagination {
+    bottom: 0 !important;
+    /* 调整分页指示器位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#zdjl_Pc .gameFeature-pagination .swiper-pagination-bullet {
+    width: 0.28rem;
+    height: 0.28rem;
+    background: url(../img/new/icon_indicator_off.png) no-repeat center center;
+    background-size: 100% 100%;
+    opacity: 1;
+    border-radius: 0;
+    margin: 0 0.15rem !important;
+    transition: all 0.3s;
+}
+
+#zdjl_Pc .gameFeature-pagination .swiper-pagination-bullet-active {
+    width: 0.41rem;
+    height: 0.41rem;
+    background: url(../img/new/icon_indicator_on.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+/* 游戏社区 */
+#zdjl_Pc .community {
+    background: url(../img/pomy/opt/content-bg5.webp);
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 12%;
+}
+
+#zdjl_Pc .community .aside-title {
+    width: 6%;
+    height: 55%;
+    font-size: 40px;
+    font-weight: 800;
+    font-style: italic;
+    writing-mode: vertical-rl;
+    background: url(../img/home/community/asideTitleBg.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+#zdjl_Pc .community .aside-title>div {
+    position: absolute;
+    left: 23%;
+    top: 35%;
+}
+
+#zdjl_Pc .community-content {
+    flex: 1;
+    height: 70%;
+    display: flex;
+    gap: 2%;
+    /* margin-right: 4%; */
+}
+
+#zdjl_Pc .community-content>div {
+    background-size: 100% 100%;
+    flex: .5;
+    position: relative;
+}
+
+#zdjl_Pc .community-content>div img {
+    width: 85%;
+    position: absolute;
+    top: 0;
+    object-fit: contain;
+}
+
+#zdjl_Pc .community-content .text {
+    font-size: 20px;
+    font-weight: 800;
+    position: absolute;
+    bottom: 0;
+}
+
+#zdjl_Pc .community-content .inTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 80%;
+    height: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3%;
+}
+
+#zdjl_Pc .community-content .inBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 80%;
+    height: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 59%;
+}
+
+#zdjl_Pc .community-content>div:last-child {
+    flex: .6;
+}
+
+#zdjl_Pc .wx-box {
+    background: url(../img/home/community/wxBg.png);
+}
+
+#zdjl_Pc .qq-box {
+    background: url(../img/home/community/qqBg.png);
+}
+
+#zdjl_Pc .qq-box>div {
+    width: 72% !important;
+    left: 46% !important;
+}
+
+#zdjl_Pc .qq-box>div>img {
+    height: 80%;
+}
+
+#zdjl_Pc .xhs-box {
+    background: url(../img/home/community/xhsBg.png);
+}
+
+#zdjl_Pc .hy-box {
+    background: url(../img/home/community/hyBg.png);
+}
+
+#zdjl_Pc .kf-box {
+    background: url(../img/home/community/kfBg.png);
+}
+
+#zdjl_Pc .kf-box>div {
+    width: 65% !important;
+    left: 47% !important;
+}
+
+#zdjl_Pc .inTop,
+.inBottom {
+    transition: All 0.4s ease-in-out;
+}
+
+#zdjl_Pc .inTop>img {
+    transition: All 0.4s ease-in-out;
+}
+
+#zdjl_Pc .inBottom>img {
+    transition: All 0.4s ease-in-out;
+}
+
+#zdjl_Pc .inTop:hover>img {
+    transform: rotate3d(0, 1, 0, 180deg) scaleX(-1);
+}
+
+#zdjl_Pc .inBottom:hover>img {
+    transform: rotate3d(0, 1, 0, 180deg) scaleX(-1);
+}
+
+/* top title */
+#zdjl_Pc .top-title.news-title,
+#zdjl_Pc .top-title.feature,
+#zdjl_Pc .top-title.partner {
+    margin: 0 auto 0.47rem;
+}
+
+#zdjl_Pc .top-title.news-title img,
+#zdjl_Pc .top-title.feature img,
+#zdjl_Pc .top-title.partner img {
+    width: 4rem;
+    height: auto;
+}
+
+/* bottom滚动提示 */
+#zdjl_Pc .scrolltTips {
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2%;
+    color: #fff;
+    text-shadow: 0px 0px 4px black;
+    font-size: 0.25rem;
+}
+
+/* 左侧悬浮二维码下载游戏 */
+#zdjl_Pc .downloadGameDialog {
+    width: 2.37rem;
+    height: 1.87rem;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    bottom: 5%;
+    transition: transform 0.4s ease-in-out;
+    /* 默认收缩状态：只展示右侧0.73rem的宽，隐藏1.64rem (2.37-0.73) */
+    transform: translateX(-1.64rem);
+    cursor: pointer;
+    display: none;
+}
+
+/* 展开状态 */
+#zdjl_Pc .downloadGameDialog.active {
+    transform: translateX(0);
+}
+
+/* 展开底图 */
+#zdjl_Pc .downloadGameDialog-bg-on {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+}
+
+/* 收缩态右侧提示图（叠在右侧上方） */
+#zdjl_Pc .downloadGameDialog-bg-off {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+
+/* 展开后隐藏 off 图片 */
+#zdjl_Pc .downloadGameDialog.active .downloadGameDialog-bg-off {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 二维码图片定位与动画 */
+#zdjl_Pc .downloadGameDialog-QRCode {
+    width: 1.48rem;
+    height: 1.48rem;
+    position: absolute;
+    left: 0.16rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background-color: #ffffff;
+    padding: 0.04rem;
+    box-sizing: border-box;
+    border-radius: 0.06rem;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+/* 展开时显示二维码 */
+#zdjl_Pc .downloadGameDialog.active .downloadGameDialog-QRCode {
+    opacity: 1;
+}
+
+/* 页脚 */
+.footer {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: auto;
+    padding: 0.72rem 0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.2rem;
+    text-align: justify;
+}
+
+#zdjl_Pc .footer .text-top {
+    color: #FFEC94;
+    margin-bottom: 0.22rem;
+    display: block;
+}
+
+#zdjl_Pc .footer .footer-logo {
+    height: 70%;
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;
+}
+
+#zdjl_Pc .footer-content {}
+
+#zdjl_Pc .footer-content .footer-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0.22rem;
+}
+
+#zdjl_Pc .footer-content .footer-logo-box img {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 0.21rem;
+}
+
+#zdjl_Pc .footer img {
+    width: 4.98rem;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* dialog */
+#zdjl_Pc .layui-layer-dialog {
+    width: 40vw;
+    height: 60vh;
+}
+
+#zdjl_Pc body .home-dialog {
+    background: none;
+    box-shadow: unset;
+}
+
+#zdjl_Pc body .home-dialog .layui-layer-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: unset;
+}
+
+#zdjl_Pc body .home-dialog .layui-layer-content::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -10%;
+    left: -5%;
+    background: url(../img/home/dialogBg.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: -10% -10%;
+}
+
+#zdjl_Pc body .home-dialog .dialog-content-self-title {
+    position: absolute;
+    z-index: 99;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 2.4rem;
+    font-weight: 900;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.4rem;
+}
+
+#zdjl_Pc body .home-dialog .dialog-content-self {
+    position: absolute;
+    z-index: 99;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    height: 55%;
+    overflow-y: auto;
+}
+
+#zdjl_Pc .home-dialog .dialog-content-self>img {
+    width: 100%;
+    height: 100%;
+}
+
+#zdjl_Pc .home-dialog .layui-layer-setwin {
+    right: -6%;
+    top: -3%;
+}
+
+#zdjl_Pc .home-dialog .layui-layer-setwin .layui-layer-close2 {
+    border: unset;
+    background: unset;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+
+#zdjl_Pc .home-dialog .layui-layer-setwin .layui-layer-close2:hover {
+    background-color: rgba(255, 220, 64, 0.9);
+}
+
+#zdjl_Pc .home-dialog .layui-layer-setwin .layui-layer-close2::before {
+    position: absolute;
+    font-size: 0.35rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#zdjl_Pc body .home-dialog2 {
+    width: 5rem;
+    height: 3.7rem;
+    top: 50%;
+    left: 50%;
+}
+
+#zdjl_Pc body .home-dialog2 .layui-layer-content::before {
+    background: url(../img/new/bg_cdkey_model.png) no-repeat;
+    background-size: contain;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-content-self {
+    width: 80%;
+    top: 32%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: unset;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-content-title {
+    font-size: 0.4rem;
+    line-height: 0.4rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.3rem;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-content-self-code {
+    font-size: 0.3rem;
+    font-weight: 600;
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.16rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-content-self-copybtn {
+    cursor: pointer;
+    background: url("../img/new/bg_cdkey_model_copy.png") no-repeat;
+    background-size: 100% 100%;
+    font-size: 0.2rem;
+    line-height: 0.39rem;
+    text-align: center;
+    font-weight: normal;
+    width: 1.02rem;
+    height: 0.39rem;
+    color: white;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-content-self-qq {
+    font-size: 0.18rem;
+    margin-top: 0.1rem;
+}
+
+#zdjl_Pc body .home-dialog2 .dialog-bottom-title {
+    position: absolute;
+    background: #ffdc40;
+    border-radius: 1rem;
+    font-size: 0.2rem;
+    font-weight: 900;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    width: 80%;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#zdjl_Pc body .home-dialog2 .layui-layer-setwin .layui-layer-close {
+    background: url("../img/new/bg_cdkey_model_close.png") no-repeat center center !important;
+    background-size: 100% 100% !important;
+    width: 0.4rem !important;
+    height: 0.4rem !important;
+    top: -0.8rem;
+}
+
+#zdjl_Pc body .home-dialog2 .layui-layer-setwin .layui-layer-close::before,
+#zdjl_Pc body .home-dialog2 .layui-layer-setwin .layui-layer-close::after {
+    display: none !important;
+}
+
+#zdjl_Pc body .home-dialog2 .layui-layer-setwin .layui-layer-close:hover {
+    background-color: transparent !important;
+}
+
+/* 12+ dialog */
+#zdjl_Pc body .twelve-dialog .layui-layer-content::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -10%;
+    left: -5%;
+    background: url(../img/home/dialogBg2.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: -10% -10%;
+}
+
+#zdjl_Pc body .twelve-dialog .dialog-content-self {
+    font-size: 0.2rem;
+    width: 90%;
+    line-height: 0.3rem;
+}
+
+#zdjl_Pc .copyright-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    width: 2rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    border: 2px solid #ffdc40;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    font-size: 0.15rem;
+    font-weight: 600;
+}
+
+#zdjl_Pc .copyright-content {
+    width: 2rem;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    border: 2px solid #ffdc40;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    font-size: 0.15rem;
+    font-weight: 600;
+}
+
+#zdjl_Pc .layui-layer-msg {
+    width: 2rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffdc40;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    font-size: 0.15rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* 领取礼包码 */
+.receive {
+    width: 2.4rem;
+    height: 3.02rem;
+    z-index: 108;
+    position: fixed;
+    bottom: 2.3rem;
+    left: -4%;
+    background: url(../img/newM/icon_cdkey_btn.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.receiveCode {
+    width: 50%;
+    height: 30%;
+    margin-left: 44%;
+    margin-top: 8%;
+    font-size: 0.11rem;
+    color: #F95934;
+    font-weight: 800;
+    font-family: Source Han Sans SC;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(10deg);
+}
+
+.receiveCodeOne {
+    width: 100%;
+    text-align: center;
+}
+
+.receiveCodeTwo {
+    width: 100%;
+    text-align: center;
+    margin-top: -5%;
+}
+
+.copyright-btn {
+    color: #fff;
+    font-size: 0.18rem;
+    font-weight: 800;
+    position: fixed;
+    z-index: 103;
+    right: 5%;
+    bottom: -1px;
+    padding: 0.1rem;
+    padding-bottom: 0.05rem;
+    background: #000;
+    border-radius: 0.2rem 0.2rem 0 0;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+}
+
+#zdjl_Pc .copyright-btn>img {
+    transition: all .5s ease-in-out;
+}
+
+/* 全局二维码大弹窗 (底部等使用) */
+.full-qrcode-model {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+}
+
+.full-qrcode-model .img-box {
+    width: 3rem;
+    height: 3rem;
+    background: url('../img/new/bg_qrcode_model.png') no-repeat center center;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-qrcode-model .img-box img {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+/* 语言切换（国际站入口） */
+#zdjl_Pc .nav-list .lang-switch-pc {
+    flex: none;
+    margin-right: 3%;
+    display: flex;
+    align-items: center;
+    gap: 0.05rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.18rem;
+}
+
+#zdjl_Pc .nav-list .lang-switch-pc a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: auto;
+    padding: 0 0.05rem;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    font-size: 0.2rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+#zdjl_Pc .nav-list .lang-switch-pc a:hover {
+    color: #FEE434;
+    background: none;
+    border-color: transparent;
+}
+
+/* 下载系统选择弹窗 */
+.pk-dl-box {
+    padding: 28px 26px 24px;
+    text-align: center;
+}
+
+.pk-dl-tip {
+    font-size: 16px;
+    font-weight: 700;
+    color: #14224a;
+}
+
+.pk-dl-btns {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.pk-dl-btn {
+    flex: 1;
+    height: 48px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: filter 0.2s ease;
+}
+
+.pk-dl-btn:hover {
+    filter: brightness(1.08);
+}
+
+.pk-dl-android {
+    background: linear-gradient(180deg, #4fd17a 0%, #1f9f4c 100%);
+}
+
+.pk-dl-ios {
+    background: linear-gradient(180deg, #5cb0ff 0%, #1465d8 100%);
+}
+
+/* POCKET Myth 品牌标识 */
+#zdjl_Pc nav .nav-logo {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+    margin-left: 3%;
+    flex-shrink: 0;
+}
+
+#zdjl_Pc nav .nav-brand {
+    font-size: 0.32rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    color: #fff;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+/* 游戏介绍（可抓取正文 + h2） */
+.about-seo {
+    position: relative;
+    z-index: 5;
+    width: 74%;
+    max-width: 1100px;
+    margin: 0.3rem auto;
+    padding: 0.26rem 0.3rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .38);
+    border-radius: 0.16rem;
+    color: #fff;
+}
+
+.about-seo h2 {
+    font-size: 0.26rem;
+    line-height: 1.4;
+    color: #FFEC94;
+    margin: 0.12rem 0 0.06rem;
+}
+
+.about-seo h2:first-child {
+    margin-top: 0;
+}
+
+.about-seo p {
+    font-size: 0.2rem;
+    line-height: 1.75;
+    color: #e8eefc;
+    margin-bottom: 0.08rem;
+}
+
+@media screen and (max-width: 750px) {
+    .about-seo {
+        width: 92%;
+        margin: 0.24rem auto;
+        padding: 0.24rem;
+    }
+
+    .about-seo h2 {
+        font-size: 0.3rem;
+    }
+
+    .about-seo p {
+        font-size: 0.24rem;
+    }
+}
+
+/* 页脚 logo 尺寸控制（PC） */
+#zdjl_Pc .footer .footer-logo {
+    height: auto;
+    align-items: center;
+}
+
+#zdjl_Pc .footer .footer-logo img {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    object-fit: contain;
+}
+
+/* 礼包码弹窗提示 */
+.dialog-content-self-tip {
+    margin-top: 0.16rem;
+    padding: 0.12rem 0.16rem;
+    border-radius: 0.1rem;
+    background: rgba(255, 212, 87, 0.12);
+    color: #FFD257;
+    font-size: 0.22rem;
+    line-height: 1.5;
+    text-align: center;
+}
